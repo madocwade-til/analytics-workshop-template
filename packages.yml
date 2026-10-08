@@ -1,0 +1,2 @@
+# Add dbt packages here if needed. No packages are required for this scaffold.
+packages: []
