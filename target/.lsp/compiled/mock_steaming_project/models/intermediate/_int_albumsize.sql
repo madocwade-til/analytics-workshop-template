@@ -29,4 +29,4 @@ final as (
 )
 
 SELECT *
-FROM fin
+FROM final

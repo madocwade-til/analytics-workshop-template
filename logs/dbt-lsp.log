@@ -9276,3 +9276,330 @@ Finished 'compile' with 1 warning for target 'dev' [2.1s]
 Processed: 4 models | 1 analysis
 Summary: 5 total | 5 success
 19:33:27.547958 [info ]: Cached model count updated: 4 models (accurate)
+==================== 2026-10-28T18:24:25.617724Z | 00000000-0000-0000-0000-000000000000 ====================
+==================== 2026-10-28T18:24:25.618532Z | 1888815d-a78e-4a26-8642-70edb2c9b762 ====================
+18:24:25.618645 [info ]: Starting dbt LSP server
+18:24:25.618775 [info ]: Connecting to LSP client on port 8000
+18:24:25.622791 [info ]: Successfully connected to LSP client
+18:24:25.622852 [info ]: Creating LSP service...
+18:24:25.625965 [info ]: Creating LSP server...
+18:24:25.626026 [info ]: Starting LSP server...
+18:24:25.993801 [info ]: Loading ~/.dbt/profiles.yml
+==================== 2026-10-28T18:24:26.169542Z | c3bdc0b4-c31c-409c-880a-b5951c6b70d4 ====================
+18:24:26.169776 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully [234us]
+==================== 2026-10-28T18:24:26.384374Z | 9104b43f-58bb-46e7-ba06-f1ab239e097e ====================
+18:24:26.385011 [info ]: Started loading project
+18:24:26.388100 [info ]: Loading ~/.dbt/profiles.yml
+18:24:26.451739 [info ]: Loading packages.yml
+18:24:26.469213 [debug]:    Started loading packages
+18:24:26.488760 [debug]:     Loaded [  0.02s] packages
+18:24:26.491690 [info ]: Finished loading project [  0.11s]
+18:24:26.492687 [info ]: Started parsing (6 nodes)
+18:24:27.878300 [debug]:    Started building model nodes
+18:24:27.878294 [debug]:    Started building model nodes
+18:24:27.878356 [debug]:    Started building model nodes
+18:24:27.878376 [debug]:   Finished [  0.00s] building model nodes
+18:24:27.878400 [debug]:   Finished [  0.00s] building model nodes
+18:24:27.878394 [debug]:   Finished [  0.00s] building model nodes
+18:24:27.879529 [debug]:    Started resolving data tests
+18:24:27.879539 [debug]:    Started resolving data tests
+18:24:27.879581 [debug]:    Started resolving data tests
+18:24:27.879685 [debug]:   Finished [  0.00s] resolving data tests
+18:24:27.879692 [debug]:   Finished [  0.00s] resolving data tests
+18:24:27.879687 [debug]:   Finished [  0.00s] resolving data tests
+18:24:27.905649 [debug]: Finished parsing models/staging/sources.yml [  0.02s]
+18:24:27.947971 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.04s]
+18:24:27.976427 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.03s]
+18:24:28.000115 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.02s]
+18:24:28.024860 [debug]:    Started building model nodes
+18:24:28.028704 [debug]:   Finished [  0.00s] building model nodes
+18:24:28.028864 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.03s]
+18:24:28.059741 [debug]:    Started resolving data tests
+18:24:28.059915 [debug]:   Finished [  0.00s] resolving data tests
+18:24:28.060901 [debug]: Finished parsing analyses/datespline_test.sql [  0.03s]
+18:24:28.062276 [debug]:    Started typechecking macros
+18:24:28.401705 [debug]:   Finished [  0.34s] typechecking macros
+18:24:28.404989 [info ]: Finished parsing [  1.91s] (6 nodes, 0 skipped, 0 errors)
+18:24:28.406199 [info ]: Cached model count updated: 4 models (estimate)
+18:24:28.406225 [info ]: Cached model count updated: 4 models (accurate)
+18:24:28.406391 [info ]: Started scheduling
+18:24:28.406871 [info ]: Finished scheduling [  0.00s]
+18:24:28.406941 [debug]: Compilation - 4 nodes selected: {"analysis.mock_steaming_project.datespline_test", "model.mock_steaming_project._int_albumsize", "model.mock_steaming_project._stg_albums", "model.mock_steaming_project._stg_tracks"}
+18:24:28.407008 [info ]: Started scheduling
+18:24:28.407073 [info ]: Finished scheduling [  0.00s]
+18:24:28.407369 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "TRACKS" }) and interval: None
+18:24:28.407392 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "ALBUMS" }) and interval: None
+18:24:28.488148 [info ]: Started building task graph
+18:24:28.488544 [info ]: Finished building task graph [  0.00s]
+18:24:28.515090 [info ]: Started rendering (4 nodes)
+18:24:28.515202 [info ]: Started model PUBLIC._int_albumsize
+18:24:28.515261 [debug]: Started rendering model PUBLIC._int_albumsize
+18:24:28.515384 [info ]: Started model PUBLIC._stg_tracks
+18:24:28.515411 [debug]: Started rendering model PUBLIC._stg_tracks
+18:24:28.515442 [info ]: Started model PUBLIC._stg_albums
+18:24:28.515459 [debug]: Started rendering model PUBLIC._stg_albums
+18:24:28.515577 [info ]: Started analysis PUBLIC.datespline_test
+18:24:28.515637 [debug]: Started rendering analysis PUBLIC.datespline_test
+18:24:28.521888 [debug]: Compiled SQL for node model.mock_steaming_project._int_albumsize at target\.lsp\compiled\mock_steaming_project\models\intermediate\_int_albumsize.sql
+18:24:28.521892 [debug]: Compiled SQL for node model.mock_steaming_project._stg_albums at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_albums.sql
+18:24:28.522163 [debug]: Compiled SQL for node model.mock_steaming_project._stg_tracks at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_tracks.sql
+18:24:28.522685 [debug]: Finished rendering [  0.01s] model PUBLIC._int_albumsize [success]
+18:24:28.522878 [info ]: Started analyzing (3 nodes)
+18:24:28.522922 [debug]: Started analyzing model PUBLIC._int_albumsize
+18:24:28.523019 [debug]: Finished rendering [  0.01s] model PUBLIC._stg_albums [success]
+18:24:28.523067 [debug]: Started analyzing model PUBLIC._stg_albums
+18:24:28.523115 [debug]: Finished rendering [  0.01s] model PUBLIC._stg_tracks [success]
+18:24:28.523151 [debug]: Started analyzing model PUBLIC._stg_tracks
+18:24:28.530021 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+18:24:28.549027 [debug]: Finished analyzing [  0.03s] model PUBLIC._stg_albums [success]
+18:24:28.549147 [info ]:  Succeeded model PUBLIC._stg_albums (view) [3 of 4 in 0.03s]
+18:24:28.549309 [debug]: Finished analyzing [  0.03s] model PUBLIC._stg_tracks [success]
+18:24:28.549352 [info ]:  Succeeded model PUBLIC._stg_tracks (view) [2 of 4 in 0.03s]
+18:24:28.589002 [debug]: Finished analyzing [  0.07s] model PUBLIC._int_albumsize [success]
+18:24:28.589092 [info ]: Finished analyzing [  0.07s] (3 nodes, 0 skipped, 0 errors)
+18:24:28.589149 [info ]:  Succeeded model PUBLIC._int_albumsize (view) [1 of 4 in 0.07s]
+18:24:32.246252 [debug]: create_debug_span(...).entered() took 132µs
+18:24:33.505385 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 1.2575804s
+18:24:33.505454 [debug]: reader.schema() took 14.3µs
+18:24:33.583027 [debug]: batch-consume loop (for res in reader) took 77.5202ms
+18:24:33.586161 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 1.3398295s
+18:24:33.586395 [debug]: concat_batches + normalize_result_column_names took 166.7µs
+18:24:33.586457 [debug]: record_current_span_status_from_attrs took 41.4µs
+18:24:33.586491 [debug]: Query executed on node analysis.mock_steaming_project.datespline_test:
+select datediff(
+        day,
+        cast('2026-01-01' as date),
+        cast('2028-01-01' as date)
+        )
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+18:24:33.586521 [debug]: drop(query_span_guard) (span exit/export) took 49.6µs
+18:24:33.600952 [debug]: Compiled SQL for node analysis.mock_steaming_project.datespline_test at target\.lsp\compiled\mock_steaming_project\analyses\datespline_test.sql
+18:24:33.601706 [debug]: Finished rendering [  5.09s] analysis PUBLIC.datespline_test [success]
+18:24:33.601797 [info ]: Finished rendering [  5.09s] (4 nodes, 0 skipped, 0 errors)
+18:24:33.601830 [info ]:  Succeeded analysis PUBLIC.datespline_test (analysis) [4 of 4 in 5.09s]
+18:24:33.622443 [info ]: Started scheduling
+18:24:33.622589 [info ]: Finished scheduling [  0.00s]
+18:24:33.623419 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [7.2s]
+Processed: 3 models | 1 analysis
+Summary: 4 total | 4 success
+18:24:33.623717 [info ]: Cached model count updated: 4 models (accurate)
+==================== 2026-10-28T18:24:33.931008Z | 2fab090d-bbd7-40f3-ae61-82be52e6ce3b ====================
+18:24:33.931372 [info ]: Started loading project
+18:24:33.936475 [info ]: Loading ~/.dbt/profiles.yml
+18:24:33.962608 [info ]: Finished loading project [  0.03s]
+18:24:34.095818 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [164ms]
+18:24:34.096070 [info ]: Cached model count updated: 4 models (accurate)
+==================== 2026-10-28T18:24:35.923995Z | e15dfd42-cf13-45bb-97a2-7bade9bdcc19 ====================
+18:24:35.924352 [info ]: Started loading project
+18:24:35.927377 [info ]: Loading ~/.dbt/profiles.yml
+18:24:35.944271 [info ]: Finished loading project [  0.02s]
+18:24:36.019421 [info ]: Cached model count updated: 4 models (estimate)
+18:24:36.019543 [info ]: Cached model count updated: 4 models (accurate)
+18:24:36.019698 [info ]: Started scheduling
+18:24:36.019890 [info ]: Finished scheduling [  0.00s]
+18:24:36.019970 [debug]: Compilation - 5 nodes selected: {"analysis.mock_steaming_project.datespline_test", "model.mock_steaming_project._int_albumsize", "model.mock_steaming_project._stg_albums", "model.mock_steaming_project._stg_tracks", "model.mock_steaming_project.scratchmodel"}
+18:24:36.163867 [info ]: Started building task graph
+18:24:36.164213 [info ]: Finished building task graph [  0.00s]
+18:24:36.189487 [info ]: Started rendering (5 nodes)
+18:24:36.189635 [info ]: Started model PUBLIC.scratchmodel
+18:24:36.189669 [debug]: Started rendering model PUBLIC.scratchmodel
+18:24:36.189746 [info ]: Started model PUBLIC._int_albumsize
+18:24:36.189776 [debug]: Started rendering model PUBLIC._int_albumsize
+18:24:36.189806 [info ]: Started model PUBLIC._stg_tracks
+18:24:36.189826 [debug]: Started rendering model PUBLIC._stg_tracks
+18:24:36.189858 [info ]: Started model PUBLIC._stg_albums
+18:24:36.189874 [debug]: Started rendering model PUBLIC._stg_albums
+18:24:36.189910 [info ]: Started analysis PUBLIC.datespline_test
+18:24:36.189934 [debug]: Started rendering analysis PUBLIC.datespline_test
+18:24:36.190892 [debug]: Compiled SQL for node model.mock_steaming_project._int_albumsize at target\.lsp\compiled\mock_steaming_project\models\intermediate\_int_albumsize.sql
+18:24:36.190892 [debug]: Compiled SQL for node model.mock_steaming_project._stg_tracks at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_tracks.sql
+18:24:36.190904 [debug]: Compiled SQL for node model.mock_steaming_project._stg_albums at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_albums.sql
+18:24:36.191099 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_albums [success]
+18:24:36.191221 [info ]: Started analyzing (4 nodes)
+18:24:36.191258 [debug]: Started analyzing model PUBLIC._stg_albums
+18:24:36.191315 [debug]: Finished rendering [  0.00s] model PUBLIC._int_albumsize [success]
+18:24:36.191351 [debug]: Started analyzing model PUBLIC._int_albumsize
+18:24:36.191397 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_tracks [success]
+18:24:36.191485 [debug]: Started analyzing model PUBLIC._stg_tracks
+18:24:36.191517 [debug]: Compiled SQL for node analysis.mock_steaming_project.datespline_test at target\.lsp\compiled\mock_steaming_project\analyses\datespline_test.sql
+18:24:36.191644 [debug]: Finished rendering [  0.00s] analysis PUBLIC.datespline_test [success]
+18:24:36.191684 [info ]:  Succeeded analysis PUBLIC.datespline_test (analysis) [5 of 5 in 0.00s]
+18:24:36.191851 [debug]: Finished analyzing [  0.00s] model PUBLIC._stg_albums [success]
+18:24:36.191922 [info ]:  Succeeded model PUBLIC._stg_albums (view) [4 of 5 in 0.00s]
+18:24:36.191991 [debug]: Finished analyzing [  0.00s] model PUBLIC._stg_tracks [success]
+18:24:36.192012 [info ]:  Succeeded model PUBLIC._stg_tracks (view) [3 of 5 in 0.00s]
+18:24:36.194214 [debug]: Finished analyzing [  0.00s] model PUBLIC._int_albumsize [success]
+18:24:36.194328 [info ]:  Succeeded model PUBLIC._int_albumsize (view) [2 of 5 in 0.00s]
+18:24:36.198063 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\.lsp\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+18:24:36.198454 [debug]: Finished rendering [  0.01s] model PUBLIC.scratchmodel [success]
+18:24:36.198505 [info ]: Finished rendering [  0.01s] (5 nodes, 0 skipped, 0 errors)
+18:24:36.198554 [debug]: Started analyzing model PUBLIC.scratchmodel
+18:24:36.207867 [warn ]: [SyntaxInvalid (dbt0101)]: extraneous input 'boooooooo' expecting one of <EOF>, 'ALTER', 'ANALYZE', 'BEGIN', 'CALL', 'COMMENT', 'COMMIT' ...
+  --> models/intermediate/scratchmodel.sql:6:1 (target\.lsp\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:7:1)
+18:24:36.208548 [debug]: Finished analyzing [  0.01s] model PUBLIC.scratchmodel [success]
+18:24:36.208605 [info ]: Finished analyzing [  0.02s] (4 nodes, 0 skipped, 0 errors)
+18:24:36.208635 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 5 in 0.02s]
+18:24:36.225657 [info ]: Started scheduling
+18:24:36.225892 [info ]: Finished scheduling [  0.00s]
+18:24:36.226219 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [302ms]
+Processed: 4 models | 1 analysis
+Summary: 5 total | 5 success
+18:24:36.226993 [info ]: Cached model count updated: 4 models (accurate)
+18:26:33.329263 [debug]: Ignoring unsupported LSP notification
+==================== 2026-10-28T18:26:43.270764Z | 2f35150f-d3c6-4c58-a481-b9120eef1f81 ====================
+18:26:43.270902 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully [138us]
+18:26:43.270993 [info ]: Cached model count updated: 4 models (accurate)
+==================== 2026-10-28T18:26:43.344593Z | 988d8dd1-98ba-4395-a75a-93e7034832eb ====================
+18:26:43.344695 [info ]: Started loading project
+18:26:43.345366 [info ]: Loading ~/.dbt/profiles.yml
+18:26:43.359939 [info ]: Started parsing (2 nodes)
+18:26:43.444758 [info ]: Finished loading project [  0.10s]
+18:26:43.446813 [debug]:    Started building model nodes
+18:26:43.446850 [debug]:   Finished [  0.00s] building model nodes
+18:26:43.446898 [debug]:    Started building model nodes
+18:26:43.446921 [debug]:   Finished [  0.00s] building model nodes
+18:26:43.446931 [debug]:    Started building model nodes
+18:26:43.446954 [debug]:   Finished [  0.00s] building model nodes
+18:26:43.447777 [debug]:    Started resolving data tests
+18:26:43.447837 [debug]:   Finished [  0.00s] resolving data tests
+18:26:43.447847 [debug]:    Started resolving data tests
+18:26:43.447895 [debug]:   Finished [  0.00s] resolving data tests
+18:26:43.447965 [debug]:    Started resolving data tests
+18:26:43.448015 [debug]:   Finished [  0.00s] resolving data tests
+18:26:43.451668 [debug]:    Started building model nodes
+18:26:43.452457 [debug]:   Finished [  0.00s] building model nodes
+18:26:43.452580 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:26:43.454978 [debug]:    Started resolving data tests
+18:26:43.455035 [debug]:   Finished [  0.00s] resolving data tests
+18:26:43.455356 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:26:43.456738 [debug]:    Started typechecking macros
+18:26:43.724285 [debug]:   Finished [  0.27s] typechecking macros
+18:26:43.726451 [info ]: Finished parsing [  0.37s] (2 nodes, 0 skipped, 0 errors)
+18:26:43.730131 [info ]: Cached model count updated: 4 models (estimate)
+18:26:43.730159 [info ]: Cached model count updated: 4 models (accurate)
+18:26:43.730199 [info ]: Started scheduling
+18:26:43.730336 [info ]: Finished scheduling [  0.00s]
+18:26:43.730368 [debug]: Compilation - 4 nodes selected: {"analysis.mock_steaming_project.datespline_test", "model.mock_steaming_project._int_albumsize", "model.mock_steaming_project._stg_albums", "model.mock_steaming_project._stg_tracks"}
+18:26:43.805125 [info ]: Started building task graph
+18:26:43.805455 [info ]: Finished building task graph [  0.00s]
+18:26:43.826755 [info ]: Started rendering (4 nodes)
+18:26:43.826800 [info ]: Started model PUBLIC._int_albumsize
+18:26:43.826820 [debug]: Started rendering model PUBLIC._int_albumsize
+18:26:43.826864 [info ]: Started model PUBLIC._stg_albums
+18:26:43.826877 [debug]: Started rendering model PUBLIC._stg_albums
+18:26:43.826898 [info ]: Started analysis PUBLIC.datespline_test
+18:26:43.826913 [debug]: Started rendering analysis PUBLIC.datespline_test
+18:26:43.826930 [info ]: Started model PUBLIC._stg_tracks
+18:26:43.826961 [debug]: Started rendering model PUBLIC._stg_tracks
+18:26:43.827859 [debug]: Compiled SQL for node model.mock_steaming_project._stg_albums at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_albums.sql
+18:26:43.827969 [debug]: Compiled SQL for node model.mock_steaming_project._stg_tracks at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_tracks.sql
+18:26:43.828034 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_albums [success]
+18:26:43.828080 [info ]: Started analyzing (3 nodes)
+18:26:43.828102 [debug]: Started analyzing model PUBLIC._stg_albums
+18:26:43.828151 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_tracks [success]
+18:26:43.828205 [debug]: Started analyzing model PUBLIC._stg_tracks
+18:26:43.828546 [debug]: Finished analyzing [  0.00s] model PUBLIC._stg_albums [success]
+18:26:43.828578 [info ]:  Succeeded model PUBLIC._stg_albums (view) [2 of 4 in 0.00s]
+18:26:43.828615 [debug]: Finished analyzing [  0.00s] model PUBLIC._stg_tracks [success]
+18:26:43.828629 [info ]:  Succeeded model PUBLIC._stg_tracks (view) [4 of 4 in 0.00s]
+18:26:43.829738 [debug]: Compiled SQL for node model.mock_steaming_project._int_albumsize at target\.lsp\compiled\mock_steaming_project\models\intermediate\_int_albumsize.sql
+18:26:43.829908 [debug]: Finished rendering [  0.00s] model PUBLIC._int_albumsize [success]
+18:26:43.829951 [debug]: Started analyzing model PUBLIC._int_albumsize
+18:26:43.831874 [debug]: Finished analyzing [  0.00s] model PUBLIC._int_albumsize [success]
+18:26:43.831906 [info ]: Finished analyzing [  0.00s] (3 nodes, 0 skipped, 0 errors)
+18:26:43.832028 [info ]:  Succeeded model PUBLIC._int_albumsize (view) [1 of 4 in 0.00s]
+18:26:46.134649 [debug]: create_debug_span(...).entered() took 40.9µs
+18:26:46.684203 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 549.4046ms
+18:26:46.684254 [debug]: reader.schema() took 800ns
+18:26:46.686313 [debug]: batch-consume loop (for res in reader) took 2.032ms
+18:26:46.688996 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 554.2741ms
+18:26:46.689051 [debug]: concat_batches + normalize_result_column_names took 14.9µs
+18:26:46.689069 [debug]: record_current_span_status_from_attrs took 7µs
+18:26:46.689083 [debug]: Query executed on node analysis.mock_steaming_project.datespline_test:
+select datediff(
+        day,
+        cast('2026-01-01' as date),
+        cast('2028-01-01' as date)
+        )
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+18:26:46.689102 [debug]: drop(query_span_guard) (span exit/export) took 25.1µs
+18:26:46.696034 [debug]: Compiled SQL for node analysis.mock_steaming_project.datespline_test at target\.lsp\compiled\mock_steaming_project\analyses\datespline_test.sql
+18:26:46.696341 [debug]: Finished rendering [  2.87s] analysis PUBLIC.datespline_test [success]
+18:26:46.696391 [info ]: Finished rendering [  2.87s] (4 nodes, 0 skipped, 0 errors)
+18:26:46.696417 [info ]:  Succeeded analysis PUBLIC.datespline_test (analysis) [3 of 4 in 2.87s]
+18:26:46.706748 [info ]: Started scheduling
+18:26:46.706961 [info ]: Finished scheduling [  0.00s]
+18:26:46.709288 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [3.4s]
+Processed: 3 models | 1 analysis
+Summary: 4 total | 4 success
+18:26:46.709498 [info ]: Cached model count updated: 4 models (accurate)
+==================== 2026-10-28T18:26:48.483969Z | 2a383483-f354-4838-a2c2-587cfa42e39f ====================
+18:26:48.484114 [info ]: Started loading project
+18:26:48.485505 [info ]: Loading ~/.dbt/profiles.yml
+18:26:48.504593 [info ]: Finished loading project [  0.02s]
+18:26:48.569013 [info ]: Cached model count updated: 4 models (estimate)
+18:26:48.569078 [info ]: Cached model count updated: 4 models (accurate)
+18:26:48.569177 [info ]: Started scheduling
+18:26:48.569426 [info ]: Finished scheduling [  0.00s]
+18:26:48.569481 [debug]: Compilation - 5 nodes selected: {"analysis.mock_steaming_project.datespline_test", "model.mock_steaming_project._int_albumsize", "model.mock_steaming_project._stg_albums", "model.mock_steaming_project._stg_tracks", "model.mock_steaming_project.scratchmodel"}
+18:26:48.653444 [info ]: Started building task graph
+18:26:48.653612 [info ]: Finished building task graph [  0.00s]
+18:26:48.703385 [info ]: Started rendering (5 nodes)
+18:26:48.703438 [info ]: Started model PUBLIC.scratchmodel
+18:26:48.703454 [debug]: Started rendering model PUBLIC.scratchmodel
+18:26:48.703497 [info ]: Started model PUBLIC._int_albumsize
+18:26:48.703516 [debug]: Started rendering model PUBLIC._int_albumsize
+18:26:48.703536 [info ]: Started model PUBLIC._stg_albums
+18:26:48.703555 [debug]: Started rendering model PUBLIC._stg_albums
+18:26:48.703575 [info ]: Started analysis PUBLIC.datespline_test
+18:26:48.703594 [debug]: Started rendering analysis PUBLIC.datespline_test
+18:26:48.703616 [info ]: Started model PUBLIC._stg_tracks
+18:26:48.703632 [debug]: Started rendering model PUBLIC._stg_tracks
+18:26:48.704325 [debug]: Compiled SQL for node model.mock_steaming_project._int_albumsize at target\.lsp\compiled\mock_steaming_project\models\intermediate\_int_albumsize.sql
+18:26:48.704311 [debug]: Compiled SQL for node analysis.mock_steaming_project.datespline_test at target\.lsp\compiled\mock_steaming_project\analyses\datespline_test.sql
+18:26:48.704422 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\.lsp\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+18:26:48.704419 [debug]: Compiled SQL for node model.mock_steaming_project._stg_albums at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_albums.sql
+18:26:48.704498 [debug]: Finished rendering [  0.00s] model PUBLIC._int_albumsize [success]
+18:26:48.704570 [info ]: Started analyzing (4 nodes)
+18:26:48.704598 [debug]: Started analyzing model PUBLIC._int_albumsize
+18:26:48.704657 [debug]: Finished rendering [  0.00s] analysis PUBLIC.datespline_test [success]
+18:26:48.704693 [info ]:  Succeeded analysis PUBLIC.datespline_test (analysis) [4 of 5 in 0.00s]
+18:26:48.704751 [debug]: Finished rendering [  0.00s] model PUBLIC.scratchmodel [success]
+18:26:48.704790 [debug]: Started analyzing model PUBLIC.scratchmodel
+18:26:48.704856 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_albums [success]
+18:26:48.704902 [debug]: Started analyzing model PUBLIC._stg_albums
+18:26:48.705032 [debug]: Compiled SQL for node model.mock_steaming_project._stg_tracks at target\.lsp\compiled\mock_steaming_project\models\staging\_stg_tracks.sql
+18:26:48.705388 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_tracks [success]
+18:26:48.705466 [info ]: Finished rendering [  0.00s] (5 nodes, 0 skipped, 0 errors)
+18:26:48.705513 [debug]: Started analyzing model PUBLIC._stg_tracks
+18:26:48.705582 [debug]: Finished analyzing [  0.00s] model PUBLIC._stg_albums [success]
+18:26:48.705606 [info ]:  Succeeded model PUBLIC._stg_albums (view) [3 of 5 in 0.00s]
+18:26:48.706231 [debug]: Finished analyzing [  0.00s] model PUBLIC._stg_tracks [success]
+18:26:48.706300 [info ]:  Succeeded model PUBLIC._stg_tracks (view) [5 of 5 in 0.00s]
+18:26:48.707130 [warn ]: [SyntaxInvalid (dbt0101)]: extraneous input 'boooooooo' expecting one of <EOF>, 'ALTER', 'ANALYZE', 'BEGIN', 'CALL', 'COMMENT', 'COMMIT' ...
+  --> models/intermediate/scratchmodel.sql:6:1 (target\.lsp\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:7:1)
+18:26:48.707513 [debug]: Finished analyzing [  0.00s] model PUBLIC._int_albumsize [success]
+18:26:48.707579 [info ]:  Succeeded model PUBLIC._int_albumsize (view) [2 of 5 in 0.00s]
+18:26:48.707763 [debug]: Finished analyzing [  0.00s] model PUBLIC.scratchmodel [success]
+18:26:48.707814 [info ]: Finished analyzing [  0.00s] (4 nodes, 0 skipped, 0 errors)
+18:26:48.707839 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 5 in 0.00s]
+18:26:48.721101 [info ]: Started scheduling
+18:26:48.721225 [info ]: Finished scheduling [  0.00s]
+18:26:48.721466 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [237ms]
+Processed: 4 models | 1 analysis
+Summary: 5 total | 5 success
+18:26:48.721879 [info ]: Cached model count updated: 4 models (accurate)

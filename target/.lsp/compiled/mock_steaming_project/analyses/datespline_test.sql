@@ -1,4 +1,4 @@
-
+with dates as (SELECT * FROM 
 
 
 
@@ -122,3 +122,11 @@ filtered as (
 
 select * from filtered
 
+),
+
+tracks as (SELECT * FROM WORKSHOP_DB.PUBLIC._stg_tracks)
+
+SELECT dates.date_day, COUNT(*) FROM
+dates
+LEFT JOIN tracks ON dates.date_day = tracks.release_day
+GROUP BY dates.date_day
