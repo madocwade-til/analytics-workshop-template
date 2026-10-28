@@ -1,0 +1,1080 @@
+==================== 2026-10-09T18:26:40.175811Z | 01a121ea-d3ab-7021-aae3-6660e62f691c ====================
+==================== 2026-10-09T18:42:28.948892Z | 01a121f9-4d3d-7ce2-bf65-744d0d96f447 ====================
+18:42:28.949794 [info ]: dbt 2.0.6
+18:42:28.952258 [info ]: Started loading project
+18:42:28.961875 [info ]: Loading ~/.dbt/profiles.yml
+18:42:28.977425 [debug]:    Started loading packages
+18:42:28.984663 [debug]:     Loaded [  0.01s] packages
+18:42:28.986044 [info ]: Finished loading project [  0.03s]
+18:42:28.987448 [info ]: Started parsing
+18:42:29.100121 [error]: [SerializationError (dbt1013)]: YAML error: invalid type: sequence, expected struct DbtPropertiesFileValues
+  --> models\staging\_src_raw_data.yml:1:1
+18:42:29.100214 [debug]: Finished parsing models/staging/_src_raw_data.yml [  0.00s]
+18:42:29.102925 [debug]: Finished parsing models/staging/_stg_posts.sql [  0.00s]
+18:42:29.312844 [error]: [DependencyNotFound (dbt1048)]: Source 'json_data.posts' not found in project. Searched for 'mock_json_workshop.json_data.posts, json_data.posts'
+  --> models/staging/_stg_posts.sql:3:6
+18:42:29.314092 [info ]: Finished parsing [  0.33s]
+18:42:29.456267 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:42:29.498405 [info ]: suggestion: Run 'dbt deps' to see the latest fusion compatible packages. For compatibility errors, try the autofix script: https://github.com/dbt-labs/dbt-autofix
+18:42:29.498405 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 2 errors for target 'dev' [549ms]
+==================== 2026-10-09T18:45:54.873454Z | 01a121fc-71d6-72a3-872d-554734d718cd ====================
+18:45:54.873654 [info ]: dbt 2.0.6
+18:45:54.874447 [info ]: Started loading project
+18:45:54.879029 [info ]: Loading ~/.dbt/profiles.yml
+18:45:54.889494 [debug]:    Started loading packages
+18:45:54.894368 [debug]:     Loaded [  0.00s] packages
+18:45:54.896027 [info ]: Finished loading project [  0.02s]
+18:45:54.897178 [info ]: Started parsing
+18:45:54.968103 [debug]: Finished parsing models/staging/_src_raw_data.yml [  0.00s]
+18:45:54.973430 [debug]: Finished parsing models/staging/_stg_posts.sql [  0.00s]
+18:45:55.165060 [info ]: Finished parsing [  0.27s]
+18:45:55.205681 [info ]: Started scheduling
+18:45:55.206026 [info ]: Finished scheduling [  0.00s]
+18:45:55.211370 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "POSTS" }) and interval: None
+18:45:55.214688 [info ]: Started building task graph
+18:45:55.216420 [info ]: Finished building task graph [  0.00s]
+18:45:55.226461 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+18:46:00.004334 [debug]: create_debug_span(...).entered() took 114.5µs
+18:46:00.148695 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 143.3849ms
+18:46:00.148775 [debug]: reader.schema() took 11.3µs
+18:46:00.152609 [debug]: batch-consume loop (for res in reader) took 3.8003ms
+18:46:00.154826 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 150.4419ms
+18:46:00.155205 [debug]: concat_batches + normalize_result_column_names took 305.3µs
+18:46:00.155261 [debug]: record_current_span_status_from_attrs took 33.1µs
+18:46:00.155295 [debug]: Query executed on node unknown:
+show terse schemas in database WORKSHOP_DB
+    limit 10000
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+18:46:00.155542 [debug]: drop(query_span_guard) (span exit/export) took 166.6µs
+18:46:00.156828 [info ]: Started rendering (1 nodes)
+18:46:00.157214 [info ]: Started model PUBLIC._stg_posts
+18:46:00.157252 [debug]: Started rendering model PUBLIC._stg_posts
+18:46:00.164577 [debug]: Compiled SQL for node model.mock_json_workshop._stg_posts at target\compiled\mock_json_workshop\models\staging\_stg_posts.sql
+18:46:00.165148 [debug]: Finished rendering [  0.01s] model PUBLIC._stg_posts [success]
+18:46:00.165732 [info ]: Finished rendering [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:46:00.166286 [info ]: Started analyzing (1 nodes)
+18:46:00.166681 [debug]: Started analyzing model PUBLIC._stg_posts
+18:46:00.176042 [debug]: Finished analyzing [  0.01s] model PUBLIC._stg_posts [success]
+18:46:00.176712 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:46:00.177208 [info ]: Started running (1 nodes)
+18:46:00.177422 [info ]: Started running model PUBLIC._stg_posts
+18:46:00.185252 [debug]: create_debug_span(...).entered() took 44.8µs
+18:46:00.388951 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 203.3022ms
+18:46:00.389028 [debug]: reader.schema() took 1.4µs
+18:46:00.391358 [debug]: batch-consume loop (for res in reader) took 2.2938ms
+18:46:00.393192 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 207.7815ms
+18:46:00.393356 [debug]: concat_batches + normalize_result_column_names took 125.7µs
+18:46:00.393394 [debug]: record_current_span_status_from_attrs took 20.9µs
+18:46:00.393410 [debug]: Query executed on node model.mock_json_workshop._stg_posts:
+SHOW OBJECTS IN SCHEMA "WORKSHOP_DB"."PUBLIC" LIMIT 10000
+18:46:00.393460 [debug]: drop(query_span_guard) (span exit/export) took 56.1µs
+18:46:00.397714 [debug]: Writing runtime sql for node "model.mock_json_workshop._stg_posts"
+18:46:00.406144 [debug]: create_debug_span(...).entered() took 48.9µs
+18:46:00.707304 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 300.7596ms
+18:46:00.707370 [debug]: reader.schema() took 1.2µs
+18:46:00.712516 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 306.3121ms
+18:46:00.712623 [debug]: concat_batches + normalize_result_column_names took 51µs
+18:46:00.712651 [debug]: record_current_span_status_from_attrs took 9.3µs
+18:46:00.712670 [debug]: Query executed on node model.mock_json_workshop._stg_posts:
+create or replace   view WORKSHOP_DB.PUBLIC._stg_posts
+  
+  
+  
+  
+  as (
+    select *
+
+from WORKSHOP_DB.RAW_DATA.POSTS
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.mock_json_workshop._stg_posts", "profile_name": "workshop", "target_name": "dev"} */
+18:46:00.712724 [debug]: drop(query_span_guard) (span exit/export) took 61.4µs
+18:46:00.716990 [info ]: Finished running [  0.54s] model PUBLIC._stg_posts [success]
+18:46:00.717936 [info ]: Finished running [  0.54s] (1 nodes, 0 skipped, 0 errors)
+18:46:00.718813 [info ]:  Succeeded model PUBLIC._stg_posts (view) [1 of 1 in 0.56s]
+18:46:00.978212 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:46:01.032981 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [6.2s]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-14T18:26:30.824232Z | 01a13baa-7b25-7b72-9778-7f4382f32bd6 ====================
+==================== 2026-10-14T18:35:46.858843Z | 01a13bb2-f665-71c3-82ee-6f8c7a45a265 ====================
+18:35:46.859822 [info ]: dbt 2.0.6
+18:35:46.864077 [info ]: Started loading project
+18:35:46.874466 [info ]: Loading ~/.dbt/profiles.yml
+18:35:46.891205 [debug]:    Started loading packages
+18:35:46.897403 [debug]:     Loaded [  0.01s] packages
+18:35:46.900917 [info ]: Finished loading project [  0.04s]
+18:35:46.903647 [info ]: Started parsing
+18:35:46.967554 [debug]: Finished parsing models/staging/_src_raw_data.yml [  0.00s]
+18:35:46.970661 [error]: [UnusedConfigKey (dbt1060)]: Ignored unexpected key `"descriptions"`. YAML path: `descriptions`.
+  --> models\staging\_src_raw_data.yml:12:9
+18:35:46.972082 [debug]: Finished parsing models/staging/_stg_posts.sql [  0.00s]
+18:35:46.973113 [debug]: Finished parsing models/staging/_stg_users.sql [  0.00s]
+18:35:47.174529 [info ]: Finished parsing [  0.27s]
+18:35:47.325768 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:35:47.357205 [info ]: suggestion: Run 'dbt deps' to see the latest fusion compatible packages. For compatibility errors, try the autofix script: https://github.com/dbt-labs/dbt-autofix
+18:35:47.357205 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error for target 'dev' [498ms]
+==================== 2026-10-14T18:35:59.664727Z | 01a13bb3-28d5-7151-ae9a-4e91f34b2d6a ====================
+18:35:59.664900 [info ]: dbt 2.0.6
+18:35:59.665444 [info ]: Started loading project
+18:35:59.669709 [info ]: Loading ~/.dbt/profiles.yml
+18:35:59.678617 [debug]:    Started loading packages
+18:35:59.682826 [debug]:     Loaded [  0.00s] packages
+18:35:59.684356 [info ]: Finished loading project [  0.02s]
+18:35:59.685454 [info ]: Started parsing
+18:35:59.746850 [debug]: Finished parsing models/staging/_src_raw_data.yml [  0.00s]
+18:35:59.749214 [debug]: Finished parsing models/staging/_stg_posts.sql [  0.00s]
+18:35:59.749838 [debug]: Finished parsing models/staging/_stg_users.sql [  0.00s]
+18:35:59.951742 [info ]: Finished parsing [  0.27s]
+18:35:59.990303 [info ]: Started scheduling
+18:35:59.990598 [info ]: Finished scheduling [  0.00s]
+18:35:59.999617 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "USERS" }) and interval: None
+18:36:00.004329 [info ]: Started building task graph
+18:36:00.006443 [info ]: Finished building task graph [  0.00s]
+18:36:00.023325 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+18:36:03.117539 [debug]: create_debug_span(...).entered() took 1.7932ms
+18:36:03.783875 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 664.7148ms
+18:36:03.784351 [debug]: reader.schema() took 416.1µs
+18:36:03.788435 [debug]: batch-consume loop (for res in reader) took 4.0396ms
+18:36:03.791048 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 673.4481ms
+18:36:03.795775 [debug]: concat_batches + normalize_result_column_names took 4.6834ms
+18:36:03.796853 [debug]: record_current_span_status_from_attrs took 1.0415ms
+18:36:03.797287 [debug]: Query executed on node unknown:
+show terse schemas in database WORKSHOP_DB
+    limit 10000
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+18:36:03.797347 [debug]: drop(query_span_guard) (span exit/export) took 465.6µs
+18:36:03.812521 [info ]: Started rendering (1 nodes)
+18:36:03.812764 [info ]: Started model PUBLIC._stg_users
+18:36:03.812785 [debug]: Started rendering model PUBLIC._stg_users
+18:36:03.816183 [debug]: Compiled SQL for node model.mock_json_workshop._stg_users at target\compiled\mock_json_workshop\models\staging\_stg_users.sql
+18:36:03.816655 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_users [success]
+18:36:03.816985 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+18:36:03.817396 [info ]: Started analyzing (1 nodes)
+18:36:03.817597 [debug]: Started analyzing model PUBLIC._stg_users
+18:36:03.824595 [debug]: Finished analyzing [  0.01s] model PUBLIC._stg_users [success]
+18:36:03.824865 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:36:03.825172 [info ]: Started running (1 nodes)
+18:36:03.825345 [info ]: Started running model PUBLIC._stg_users
+18:36:03.875688 [debug]: create_debug_span(...).entered() took 28.4µs
+18:36:06.900476 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 3.0245978s
+18:36:06.900560 [debug]: reader.schema() took 900ns
+18:36:06.902350 [debug]: batch-consume loop (for res in reader) took 1.7635ms
+18:36:06.904562 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 3.0288285s
+18:36:06.904674 [debug]: concat_batches + normalize_result_column_names took 79.7µs
+18:36:06.904704 [debug]: record_current_span_status_from_attrs took 9.9µs
+18:36:06.904726 [debug]: Query executed on node model.mock_json_workshop._stg_users:
+SHOW OBJECTS IN SCHEMA "WORKSHOP_DB"."PUBLIC" LIMIT 10000
+18:36:06.904783 [debug]: drop(query_span_guard) (span exit/export) took 68.6µs
+18:36:06.912121 [debug]: Writing runtime sql for node "model.mock_json_workshop._stg_users"
+18:36:06.914306 [debug]: create_debug_span(...).entered() took 21.5µs
+18:36:07.594401 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 679.9884ms
+18:36:07.594456 [debug]: reader.schema() took 900ns
+18:36:07.598635 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 684.2816ms
+18:36:07.598717 [debug]: concat_batches + normalize_result_column_names took 41.9µs
+18:36:07.598734 [debug]: record_current_span_status_from_attrs took 5.6µs
+18:36:07.598753 [debug]: Query executed on node model.mock_json_workshop._stg_users:
+create or replace   view WORKSHOP_DB.PUBLIC._stg_users
+  
+  
+  
+  
+  as (
+    
+SELECT *
+from WORKSHOP_DB.RAW_DATA.USERS
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.mock_json_workshop._stg_users", "profile_name": "workshop", "target_name": "dev"} */
+18:36:07.598803 [debug]: drop(query_span_guard) (span exit/export) took 59.8µs
+18:36:07.609561 [info ]: Finished running [  3.78s] model PUBLIC._stg_users [success]
+18:36:07.610006 [info ]: Finished running [  3.78s] (1 nodes, 0 skipped, 0 errors)
+18:36:07.610569 [info ]:  Succeeded model PUBLIC._stg_users (view) [1 of 1 in 3.79s]
+18:36:07.937634 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:36:07.974906 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [8.3s]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-14T18:49:45.469602Z | 01a13bbf-c2f9-74d0-a6c8-27811721066c ====================
+18:49:45.469839 [info ]: dbt 2.0.6
+18:49:45.470425 [info ]: Started cleaning
+18:49:45.470882 [info ]: Started loading project
+18:49:45.475093 [info ]: Loading ~/.dbt/profiles.yml
+18:49:45.476106 [info ]: Finished loading project [  0.01s]
+18:49:45.478951 [info ]: Removing target
+18:49:45.519505 [info ]: Finished cleaning [  0.05s]
+18:49:45.650184 [info ]: 
+==================== Execution Summary =====================
+Finished 'clean' successfully [180ms]
+==================== 2026-10-14T18:56:21.167138Z | 01a13bc5-cc49-7441-905a-496606a56c3f ====================
+18:56:21.167386 [info ]: dbt 2.0.6
+18:56:21.168145 [info ]: Started loading project
+18:56:21.172451 [info ]: Loading ~/.dbt/profiles.yml
+18:56:21.182897 [debug]:    Started loading packages
+18:56:21.186397 [debug]:     Loaded [  0.00s] packages
+18:56:21.187711 [info ]: Finished loading project [  0.02s]
+18:56:21.188605 [info ]: Started parsing
+18:56:21.239420 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:56:21.243692 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:56:21.470764 [info ]: Finished parsing [  0.28s]
+18:56:21.522957 [info ]: Started scheduling
+18:56:21.523358 [info ]: Finished scheduling [  0.00s]
+18:56:21.528427 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "ALBUMS" }) and interval: None
+18:56:21.531099 [info ]: Started building task graph
+18:56:21.531581 [info ]: Finished building task graph [  0.00s]
+18:56:21.541536 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+18:56:23.549618 [debug]: create_debug_span(...).entered() took 71.2µs
+18:56:23.945881 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 396.0753ms
+18:56:23.945923 [debug]: reader.schema() took 3.8µs
+18:56:23.947622 [debug]: batch-consume loop (for res in reader) took 1.6787ms
+18:56:23.948722 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 399.0556ms
+18:56:23.948881 [debug]: concat_batches + normalize_result_column_names took 124.4µs
+18:56:23.948919 [debug]: record_current_span_status_from_attrs took 22.5µs
+18:56:23.948944 [debug]: Query executed on node unknown:
+show terse schemas in database WORKSHOP_DB
+    limit 10000
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+18:56:23.949001 [debug]: drop(query_span_guard) (span exit/export) took 69.1µs
+18:56:23.949506 [info ]: Started rendering (1 nodes)
+18:56:23.949762 [info ]: Started model PUBLIC._stg_albums
+18:56:23.949790 [debug]: Started rendering model PUBLIC._stg_albums
+18:56:23.953909 [debug]: Compiled SQL for node model.mock_steaming_project._stg_albums at target\compiled\mock_steaming_project\models\staging\_stg_albums.sql
+18:56:23.954343 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_albums [success]
+18:56:23.954763 [info ]: Finished rendering [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:56:23.955214 [info ]: Started analyzing (1 nodes)
+18:56:23.955389 [debug]: Started analyzing model PUBLIC._stg_albums
+18:56:23.962568 [debug]: Finished analyzing [  0.01s] model PUBLIC._stg_albums [success]
+18:56:23.962975 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:56:23.963345 [info ]: Started running (1 nodes)
+18:56:23.963516 [info ]: Started running model PUBLIC._stg_albums
+18:56:23.967027 [debug]: create_debug_span(...).entered() took 24.8µs
+18:56:24.218764 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 251.3121ms
+18:56:24.218803 [debug]: reader.schema() took 700ns
+18:56:24.220076 [debug]: batch-consume loop (for res in reader) took 1.25ms
+18:56:24.221391 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 254.3194ms
+18:56:24.221517 [debug]: concat_batches + normalize_result_column_names took 74µs
+18:56:24.221537 [debug]: record_current_span_status_from_attrs took 5.9µs
+18:56:24.221550 [debug]: Query executed on node model.mock_steaming_project._stg_albums:
+SHOW OBJECTS IN SCHEMA "WORKSHOP_DB"."PUBLIC" LIMIT 10000
+18:56:24.221591 [debug]: drop(query_span_guard) (span exit/export) took 45.5µs
+18:56:24.223896 [debug]: Writing runtime sql for node "model.mock_steaming_project._stg_albums"
+18:56:24.232372 [debug]: create_debug_span(...).entered() took 28.3µs
+18:56:24.549369 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 316.7733ms
+18:56:24.549434 [debug]: reader.schema() took 1µs
+18:56:24.552931 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 320.5004ms
+18:56:24.553027 [debug]: concat_batches + normalize_result_column_names took 48µs
+18:56:24.553047 [debug]: record_current_span_status_from_attrs took 7.6µs
+18:56:24.553070 [debug]: Query executed on node model.mock_steaming_project._stg_albums:
+create or replace   view WORKSHOP_DB.PUBLIC._stg_albums
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM WORKSHOP_DB.RAW_DATA.albums
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.mock_steaming_project._stg_albums", "profile_name": "workshop", "target_name": "dev"} */
+18:56:24.553149 [debug]: drop(query_span_guard) (span exit/export) took 89.1µs
+18:56:24.556260 [info ]: Finished running [  0.59s] model PUBLIC._stg_albums [success]
+18:56:24.556928 [info ]: Finished running [  0.59s] (1 nodes, 0 skipped, 0 errors)
+18:56:24.557879 [info ]:  Succeeded model PUBLIC._stg_albums (view) [1 of 1 in 0.60s]
+18:56:24.770911 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:56:24.819627 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' successfully for target 'dev' [3.7s]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-14T19:09:34.005012Z | 01a13bd1-e55e-7df2-b705-49d89d1ab913 ====================
+19:09:34.005444 [info ]: dbt 2.0.6
+19:09:34.006646 [info ]: Started loading project
+19:09:34.014706 [info ]: Loading ~/.dbt/profiles.yml
+19:09:34.023315 [debug]:    Started loading packages
+19:09:34.033147 [debug]:     Loaded [  0.01s] packages
+19:09:34.037217 [info ]: Finished loading project [  0.03s]
+19:09:34.039339 [info ]: Started parsing
+19:09:34.080586 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+19:09:34.082797 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+19:09:34.083201 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+19:09:34.083555 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+19:09:34.167450 [info ]: Finished parsing [  0.13s]
+19:09:34.222600 [info ]: Started scheduling
+19:09:34.222750 [info ]: Finished scheduling [  0.00s]
+19:09:34.225587 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "ALBUMS" }) and interval: None
+19:09:34.225606 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "TRACKS" }) and interval: None
+19:09:34.227683 [info ]: Started building task graph
+19:09:34.228752 [info ]: Finished building task graph [  0.00s]
+19:09:34.238564 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+19:09:36.229583 [debug]: create_debug_span(...).entered() took 1.2546ms
+19:09:36.399294 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 169.2207ms
+19:09:36.399340 [debug]: reader.schema() took 1.5µs
+19:09:36.402589 [debug]: batch-consume loop (for res in reader) took 3.227ms
+19:09:36.404770 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 175.1492ms
+19:09:36.406819 [debug]: concat_batches + normalize_result_column_names took 2.0128ms
+19:09:36.407374 [debug]: record_current_span_status_from_attrs took 525µs
+19:09:36.407551 [debug]: Query executed on node unknown:
+show terse schemas in database WORKSHOP_DB
+    limit 10000
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+19:09:36.407601 [debug]: drop(query_span_guard) (span exit/export) took 206.3µs
+19:09:36.414810 [info ]: Started rendering (3 nodes)
+19:09:36.415062 [info ]: Started model PUBLIC._stg_tracks
+19:09:36.415088 [debug]: Started rendering model PUBLIC._stg_tracks
+19:09:36.415141 [info ]: Started model PUBLIC._stg_albums
+19:09:36.415162 [debug]: Started rendering model PUBLIC._stg_albums
+19:09:36.418439 [debug]: Compiled SQL for node model.mock_steaming_project._stg_tracks at target\compiled\mock_steaming_project\models\staging\_stg_tracks.sql
+19:09:36.418815 [debug]: Compiled SQL for node model.mock_steaming_project._stg_albums at target\compiled\mock_steaming_project\models\staging\_stg_albums.sql
+19:09:36.418580 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_tracks [success]
+19:09:36.419113 [info ]: Started analyzing (3 nodes)
+19:09:36.419245 [debug]: Started analyzing model PUBLIC._stg_tracks
+19:09:36.419305 [debug]: Finished rendering [  0.00s] model PUBLIC._stg_albums [success]
+19:09:36.419575 [debug]: Started analyzing model PUBLIC._stg_albums
+19:09:36.424858 [debug]: Finished analyzing [  0.01s] model PUBLIC._stg_albums [success]
+19:09:36.425071 [info ]: Started running (3 nodes)
+19:09:36.425190 [info ]: Started running model PUBLIC._stg_albums
+19:09:36.425235 [debug]: Finished analyzing [  0.01s] model PUBLIC._stg_tracks [success]
+19:09:36.425519 [info ]: Started running model PUBLIC._stg_tracks
+19:09:36.447547 [debug]: create_debug_span(...).entered() took 16.6µs
+19:09:36.586137 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 138.4971ms
+19:09:36.586179 [debug]: reader.schema() took 800ns
+19:09:36.587793 [debug]: batch-consume loop (for res in reader) took 1.5879ms
+19:09:36.588759 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 141.187ms
+19:09:36.588832 [debug]: concat_batches + normalize_result_column_names took 53.5µs
+19:09:36.588845 [debug]: record_current_span_status_from_attrs took 4.1µs
+19:09:36.588854 [debug]: Query executed on node model.mock_steaming_project._stg_albums:
+SHOW OBJECTS IN SCHEMA "WORKSHOP_DB"."PUBLIC" LIMIT 10000
+19:09:36.588882 [debug]: drop(query_span_guard) (span exit/export) took 32µs
+19:09:36.594286 [debug]: Writing runtime sql for node "model.mock_steaming_project._stg_albums"
+19:09:36.595986 [debug]: create_debug_span(...).entered() took 11.2µs
+19:09:37.174580 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 578.5282ms
+19:09:37.174625 [debug]: reader.schema() took 800ns
+19:09:37.178435 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 582.4202ms
+19:09:37.178501 [debug]: concat_batches + normalize_result_column_names took 35.2µs
+19:09:37.178516 [debug]: record_current_span_status_from_attrs took 5.4µs
+19:09:37.178529 [debug]: Query executed on node model.mock_steaming_project._stg_albums:
+create or replace   view WORKSHOP_DB.PUBLIC._stg_albums
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM WORKSHOP_DB.RAW_DATA.albums
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.mock_steaming_project._stg_albums", "profile_name": "workshop", "target_name": "dev"} */
+19:09:37.178566 [debug]: drop(query_span_guard) (span exit/export) took 42.5µs
+19:09:37.188016 [info ]: Finished running [  0.76s] model PUBLIC._stg_albums [success]
+19:09:37.188380 [info ]:  Succeeded model PUBLIC._stg_albums (view) [2 of 3 in 0.77s]
+19:09:39.799229 [debug]: create_debug_span(...).entered() took 46µs
+19:09:39.965444 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 166.0944ms
+19:09:39.965487 [debug]: reader.schema() took 700ns
+19:09:39.966933 [debug]: batch-consume loop (for res in reader) took 1.426ms
+19:09:39.968077 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 168.8025ms
+19:09:39.968143 [debug]: concat_batches + normalize_result_column_names took 47.8µs
+19:09:39.968158 [debug]: record_current_span_status_from_attrs took 4.3µs
+19:09:39.968168 [debug]: Query executed on node model.mock_steaming_project._stg_tracks:
+SHOW OBJECTS IN SCHEMA "WORKSHOP_DB"."PUBLIC" LIMIT 10000
+19:09:39.968197 [debug]: drop(query_span_guard) (span exit/export) took 33.7µs
+19:09:39.972327 [debug]: Writing runtime sql for node "model.mock_steaming_project._stg_tracks"
+19:09:39.974576 [debug]: create_debug_span(...).entered() took 20.5µs
+19:09:40.359209 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 384.4894ms
+19:09:40.359264 [debug]: reader.schema() took 800ns
+19:09:40.362176 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 387.5573ms
+19:09:40.362230 [debug]: concat_batches + normalize_result_column_names took 19.3µs
+19:09:40.362244 [debug]: record_current_span_status_from_attrs took 5.1µs
+19:09:40.362256 [debug]: Query executed on node model.mock_steaming_project._stg_tracks:
+create or replace   view WORKSHOP_DB.PUBLIC._stg_tracks
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM WORKSHOP_DB.RAW_DATA.tracks
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.mock_steaming_project._stg_tracks", "profile_name": "workshop", "target_name": "dev"} */
+19:09:40.362290 [debug]: drop(query_span_guard) (span exit/export) took 40.1µs
+19:09:40.364144 [info ]: Finished running [  3.94s] model PUBLIC._stg_tracks [success]
+19:09:40.364220 [info ]:  Succeeded model PUBLIC._stg_tracks (view) [1 of 3 in 3.95s]
+19:09:40.364600 [info ]: Started model PUBLIC._int_albumsize
+19:09:40.364609 [debug]: Started rendering model PUBLIC._int_albumsize
+19:09:40.366482 [debug]: Compiled SQL for node model.mock_steaming_project._int_albumsize at target\compiled\mock_steaming_project\models\intermediate\_int_albumsize.sql
+19:09:40.366598 [debug]: Finished rendering [  0.00s] model PUBLIC._int_albumsize [success]
+19:09:40.366705 [info ]: Finished rendering [  3.95s] (3 nodes, 0 skipped, 0 errors)
+19:09:40.367188 [debug]: Started analyzing model PUBLIC._int_albumsize
+19:09:40.374346 [debug]: Finished analyzing [  0.01s] model PUBLIC._int_albumsize [success]
+19:09:40.374835 [info ]: Finished analyzing [  3.96s] (3 nodes, 0 skipped, 0 errors)
+19:09:40.375232 [info ]: Started running model PUBLIC._int_albumsize
+19:09:40.380078 [debug]: Writing runtime sql for node "model.mock_steaming_project._int_albumsize"
+19:09:40.382400 [debug]: create_debug_span(...).entered() took 18.7µs
+19:09:40.568948 [debug]: Query executed on node model.mock_steaming_project._int_albumsize:
+create or replace   view WORKSHOP_DB.PUBLIC._int_albumsize
+  
+  
+  
+  
+  as (
+    
+WITH albums as (
+    SELECT *
+    FROM WORKSHOP_DB.PUBLIC._stg_albums
+),
+
+tracks as (
+    SELECT *
+    FROM WORKSHOP_DB.PUBLIC._stg_tracks
+),
+
+trackcount as (
+    SELECT *
+    FROM tracks
+),
+
+final as (
+    SELECT 
+    a.*,
+
+)
+
+SELECT *
+FROM final
+  )
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.mock_steaming_project._int_albumsize", "profile_name": "workshop", "target_name": "dev"} */
+19:09:41.571129 [error]: [DbDriverFailed (dbt1308)]: Database Error in model _int_albumsize (target\run\mock_steaming_project\models\intermediate\_int_albumsize.sql)
+  [Snowflake] 002001 (02000): SQL compilation error:
+  Object 'A' does not exist or not authorized.
+  (in run\mock_steaming_project\models/intermediate\_int_albumsize.sql)
+19:09:41.571558 [info ]: Finished running [  1.20s] model PUBLIC._int_albumsize [error]
+19:09:41.572060 [info ]: Finished running [  5.15s] (3 nodes, 0 skipped, 1 errors)
+19:09:41.572419 [info ]:     Failed model PUBLIC._int_albumsize (view) [3 of 3 in 1.20s]
+19:09:41.739987 [info ]: New version available 2.0.8 (run `dbt system update`)
+19:09:41.819960 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error for target 'dev' [7.8s]
+Processed: 3 models
+Summary: 3 total | 2 success | 1 error
+==================== 2026-10-15T13:37:11.642111Z | 01a13fc7-f5d2-7852-9987-883c30c788cd ====================
+13:37:11.642380 [info ]: dbt 2.0.6
+13:37:11.661938 [info ]: Loading packages.yml
+13:37:11.662199 [info ]: Installing packages
+13:37:11.737763 [info ]: Installing dbt-labs/dbt_utils
+13:37:12.500988 [info ]:  Installed dbt-labs/dbt_utils: 1.4.1
+13:37:12.501799 [info ]:  Installed 1 package
+13:37:12.556353 [info ]: 
+==================== Execution Summary =====================
+Finished 'deps' successfully [914ms]
+==================== 2026-10-16T18:13:58.742502Z | 01a145eb-b950-70b0-8b10-0deca0af70a8 ====================
+18:13:58.743008 [info ]: dbt 2.0.6
+18:13:58.744349 [info ]: Started loading project
+18:13:58.748353 [info ]: Loading ~/.dbt/profiles.yml
+18:13:58.753783 [info ]: Loading packages.yml
+18:13:58.754480 [debug]:    Started loading packages
+18:13:58.760612 [debug]:     Loaded [  0.01s] packages
+18:13:58.761641 [info ]: Finished loading project [  0.02s]
+18:13:58.773486 [info ]: Started parsing
+18:13:58.815160 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:13:58.817536 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:13:58.817842 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:13:58.818205 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:13:58.818538 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:13:58.822107 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:13:58.953139 [info ]: Finished parsing [  0.18s]
+18:13:58.955926 [info ]: Started scheduling
+18:13:58.956061 [info ]: Finished scheduling [  0.00s]
+18:13:58.956118 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion 'fqn:scratchmodel' does not match any enabled nodes
+18:13:58.956305 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+18:13:58.996263 [info ]: Started building task graph
+18:13:58.996566 [info ]: Finished building task graph [  0.00s]
+18:13:59.095838 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:13:59.128371 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 2 warnings for target 'dev' [385ms]
+==================== 2026-10-16T18:16:51.598911Z | 01a145ee-5c8c-7f40-9339-327f5d3cf04d ====================
+18:16:51.599041 [info ]: dbt 2.0.6
+18:16:51.599429 [info ]: Started loading project
+18:16:51.602756 [info ]: Loading ~/.dbt/profiles.yml
+18:16:51.608036 [info ]: Loading packages.yml
+18:16:51.608750 [debug]:    Started loading packages
+18:16:51.615583 [debug]:     Loaded [  0.01s] packages
+18:16:51.616571 [info ]: Finished loading project [  0.02s]
+18:16:51.617186 [info ]: Started parsing
+18:16:51.652391 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:16:51.653684 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:16:51.654037 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:16:51.654401 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:16:51.654735 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:16:51.657147 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:16:51.778589 [info ]: Finished parsing [  0.16s]
+18:16:51.779978 [info ]: Started scheduling
+18:16:51.780113 [info ]: Finished scheduling [  0.00s]
+18:16:51.780221 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion 'fqn:scratchmodel' does not match any enabled nodes
+18:16:51.780246 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+18:16:51.812660 [info ]: Started building task graph
+18:16:51.812914 [info ]: Finished building task graph [  0.00s]
+18:16:51.835725 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:16:51.866194 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 2 warnings for target 'dev' [267ms]
+==================== 2026-10-16T18:17:19.429363Z | 01a145ee-c943-7261-9c42-a4689408b528 ====================
+18:17:19.429518 [info ]: dbt 2.0.6
+18:17:19.429984 [info ]: Started loading project
+18:17:19.433555 [info ]: Loading ~/.dbt/profiles.yml
+18:17:19.439170 [info ]: Loading packages.yml
+18:17:19.439788 [debug]:    Started loading packages
+18:17:19.445669 [debug]:     Loaded [  0.01s] packages
+18:17:19.446419 [info ]: Finished loading project [  0.02s]
+18:17:19.446907 [info ]: Started parsing
+18:17:19.486883 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:17:19.488212 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:17:19.488780 [error]: [MacroSyntaxInvalid (dbt1502)]: Failed to render SQL syntax error: unexpected `=`, expected end of block
+(in models/intermediate/scratchmodel.sql:6:16)
+  --> models/intermediate/scratchmodel.sql:6:16
+18:17:19.488837 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:17:19.489145 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:17:19.489401 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:17:19.491718 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:17:19.608672 [info ]: Finished parsing [  0.16s]
+18:17:19.632449 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:17:19.664229 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error for target 'dev' [234ms]
+==================== 2026-10-16T18:17:42.219516Z | 01a145ef-2249-7e21-a9bd-adfebe0928fc ====================
+18:17:42.219645 [info ]: dbt 2.0.6
+18:17:42.219955 [info ]: Started loading project
+18:17:42.222532 [info ]: Loading ~/.dbt/profiles.yml
+18:17:42.227022 [info ]: Loading packages.yml
+18:17:42.227591 [debug]:    Started loading packages
+18:17:42.234787 [debug]:     Loaded [  0.01s] packages
+18:17:42.235632 [info ]: Finished loading project [  0.02s]
+18:17:42.236206 [info ]: Started parsing
+18:17:42.272350 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:17:42.274195 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:17:42.274951 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:17:42.275374 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:17:42.275659 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:17:42.278193 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:17:42.399040 [info ]: Finished parsing [  0.16s]
+18:17:42.400081 [info ]: Started scheduling
+18:17:42.400259 [info ]: Finished scheduling [  0.00s]
+18:17:42.405253 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "PUBLIC", table: "_STG_ALBUMS" }) and interval: None
+18:17:42.437551 [info ]: Started building task graph
+18:17:42.437923 [info ]: Finished building task graph [  0.00s]
+18:17:42.443738 [info ]: Started rendering (1 nodes)
+18:17:42.443871 [info ]: Started model PUBLIC.scratchmodel
+18:17:42.443883 [debug]: Started rendering model PUBLIC.scratchmodel
+18:17:42.445866 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+18:17:42.445971 [debug]: Finished rendering [  0.00s] model PUBLIC.scratchmodel [success]
+18:17:42.446144 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+18:17:42.446392 [info ]: Started analyzing (1 nodes)
+18:17:42.446460 [debug]: Started analyzing model PUBLIC.scratchmodel
+18:17:42.456888 [warn ]: [SyntaxInvalid (dbt0101)]: no viable alternative at input '='
+  --> models/intermediate/scratchmodel.sql:6:1 (target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:7:15)
+18:17:42.457667 [debug]: Finished analyzing [  0.01s] model PUBLIC.scratchmodel [success]
+18:17:42.457831 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:17:42.458030 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 1 in 0.01s]
+18:17:42.468911 [info ]: Compiled node 'scratchmodel' is:
+
+
+SELECT order_id, order_date, revenue
+FROM WORKSHOP_DB.PUBLIC._stg_albums
+WHERE 1=1
+
+AND sales_rep == 
+
+18:17:42.511789 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [292ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-16T18:19:03.739941Z | 01a145f0-60b9-7641-bb36-988af078ef07 ====================
+18:19:03.740098 [info ]: dbt 2.0.6
+18:19:03.740447 [info ]: Started loading project
+18:19:03.743396 [info ]: Loading ~/.dbt/profiles.yml
+18:19:03.749663 [info ]: Loading packages.yml
+18:19:03.751202 [debug]:    Started loading packages
+18:19:03.757600 [debug]:     Loaded [  0.01s] packages
+18:19:03.758461 [info ]: Finished loading project [  0.02s]
+18:19:03.759047 [info ]: Started parsing
+18:19:03.795025 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:19:03.796228 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:19:03.796637 [error]: [MacroSyntaxInvalid (dbt1502)]: Failed to render SQL syntax error: unexpected end of input, expected endif
+  --> models/intermediate/scratchmodel.sql
+18:19:03.796684 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:19:03.797193 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:19:03.797445 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:19:03.800229 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:19:03.916239 [info ]: Finished parsing [  0.16s]
+18:19:03.947756 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:19:03.977602 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error for target 'dev' [237ms]
+==================== 2026-10-16T18:19:20.662306Z | 01a145f0-a2d3-7040-88fb-70e705302819 ====================
+18:19:20.662483 [info ]: dbt 2.0.6
+18:19:20.662857 [info ]: Started loading project
+18:19:20.667729 [info ]: Loading ~/.dbt/profiles.yml
+18:19:20.677221 [info ]: Loading packages.yml
+18:19:20.678026 [debug]:    Started loading packages
+18:19:20.685129 [debug]:     Loaded [  0.01s] packages
+18:19:20.685988 [info ]: Finished loading project [  0.02s]
+18:19:20.686666 [info ]: Started parsing
+18:19:20.730287 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:19:20.731728 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:19:20.732147 [error]: [MacroSyntaxInvalid (dbt1502)]: Failed to render SQL syntax error: unexpected end of input, expected endif
+  --> models/intermediate/scratchmodel.sql
+18:19:20.732194 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:19:20.732694 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:19:20.733287 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:19:20.736153 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:19:20.849695 [info ]: Finished parsing [  0.16s]
+18:19:20.898236 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 error for target 'dev' [235ms]
+==================== 2026-10-16T18:19:55.592529Z | 01a145f1-2b46-73c2-8d9a-e5833fb8ce9c ====================
+18:19:55.592680 [info ]: dbt 2.0.6
+18:19:55.593085 [info ]: Started loading project
+18:19:55.597945 [info ]: Loading ~/.dbt/profiles.yml
+18:19:55.607038 [info ]: Loading packages.yml
+18:19:55.607591 [debug]:    Started loading packages
+18:19:55.617180 [debug]:     Loaded [  0.01s] packages
+18:19:55.618984 [info ]: Finished loading project [  0.03s]
+18:19:55.620366 [info ]: Started parsing
+18:19:55.664757 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:19:55.666293 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:19:55.667040 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:19:55.667526 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:19:55.667915 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:19:55.670529 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:19:55.796342 [info ]: Finished parsing [  0.18s]
+18:19:55.797419 [info ]: Started scheduling
+18:19:55.797555 [info ]: Finished scheduling [  0.00s]
+18:19:55.800287 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "PUBLIC", table: "_STG_ALBUMS" }) and interval: None
+18:19:55.830007 [info ]: Started building task graph
+18:19:55.830232 [info ]: Finished building task graph [  0.00s]
+18:19:55.836562 [info ]: Started rendering (1 nodes)
+18:19:55.836749 [info ]: Started model PUBLIC.scratchmodel
+18:19:55.836760 [debug]: Started rendering model PUBLIC.scratchmodel
+18:19:55.838049 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+18:19:55.838168 [debug]: Finished rendering [  0.00s] model PUBLIC.scratchmodel [success]
+18:19:55.838335 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+18:19:55.838453 [info ]: Started analyzing (1 nodes)
+18:19:55.838527 [debug]: Started analyzing model PUBLIC.scratchmodel
+18:19:55.842052 [warn ]: [SyntaxInvalid (dbt0101)]: mismatched input 'yay' expecting one of <EOF>, 'ALTER', 'ANALYZE', 'BEGIN', 'CALL', 'COMMENT', 'COMMIT' ...
+  --> models/intermediate/scratchmodel.sql:4:1 (target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:5:1)
+18:19:55.842200 [debug]: Finished analyzing [  0.00s] model PUBLIC.scratchmodel [success]
+18:19:55.842366 [info ]: Finished analyzing [  0.00s] (1 nodes, 0 skipped, 0 errors)
+18:19:55.842543 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 1 in 0.00s]
+18:19:55.851409 [info ]: Compiled node 'scratchmodel' is:
+
+
+
+
+yay it works!
+
+
+
+SELECT order_id, order_date, revenue
+FROM WORKSHOP_DB.PUBLIC._stg_albums
+WHERE 1=1
+
+AND sales_rep == 
+
+
+18:19:55.888194 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [295ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-16T18:22:14.952658Z | 01a145f3-4ba5-7751-9ace-5cb8a5c9d6c0 ====================
+18:22:14.952839 [info ]: dbt 2.0.6
+18:22:14.953228 [info ]: Started loading project
+18:22:14.956783 [info ]: Loading ~/.dbt/profiles.yml
+18:22:14.963467 [info ]: Loading packages.yml
+18:22:14.964363 [debug]:    Started loading packages
+18:22:14.971172 [debug]:     Loaded [  0.01s] packages
+18:22:14.972039 [info ]: Finished loading project [  0.02s]
+18:22:14.972677 [info ]: Started parsing
+18:22:15.013373 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:22:15.014502 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:22:15.014992 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:22:15.015368 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:22:15.015691 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:22:15.018147 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:22:15.134687 [info ]: Finished parsing [  0.16s]
+18:22:15.135526 [info ]: Started scheduling
+18:22:15.135660 [info ]: Finished scheduling [  0.00s]
+18:22:15.138614 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "PUBLIC", table: "_STG_ALBUMS" }) and interval: None
+18:22:15.171681 [info ]: Started building task graph
+18:22:15.171898 [info ]: Finished building task graph [  0.00s]
+18:22:15.178088 [info ]: Started rendering (1 nodes)
+18:22:15.178256 [info ]: Started model PUBLIC.scratchmodel
+18:22:15.178271 [debug]: Started rendering model PUBLIC.scratchmodel
+18:22:15.179566 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+18:22:15.179811 [debug]: Finished rendering [  0.00s] model PUBLIC.scratchmodel [success]
+18:22:15.180028 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+18:22:15.180311 [info ]: Started analyzing (1 nodes)
+18:22:15.180412 [debug]: Started analyzing model PUBLIC.scratchmodel
+18:22:15.187608 [warn ]: [SyntaxInvalid (dbt0101)]: extraneous input 'boooooooo' expecting one of <EOF>, 'ALTER', 'ANALYZE', 'BEGIN', 'CALL', 'COMMENT', 'COMMIT' ...
+  --> models/intermediate/scratchmodel.sql:4:1 (target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:5:1)
+18:22:15.187724 [debug]: Finished analyzing [  0.01s] model PUBLIC.scratchmodel [success]
+18:22:15.187894 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:22:15.188031 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 1 in 0.01s]
+18:22:15.196477 [info ]: Compiled node 'scratchmodel' is:
+
+
+
+
+boooooooo
+
+
+
+SELECT order_id, order_date, revenue
+FROM WORKSHOP_DB.PUBLIC._stg_albums
+WHERE 1=1
+
+AND sales_rep == 
+
+
+18:22:15.205946 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:22:15.236631 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [283ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-16T18:24:32.186886Z | 01a145f5-63b8-7421-a281-3905a7455164 ====================
+18:24:32.187069 [info ]: dbt 2.0.6
+18:24:32.187642 [info ]: Started loading project
+18:24:32.191340 [info ]: Loading ~/.dbt/profiles.yml
+18:24:32.196292 [info ]: Loading packages.yml
+18:24:32.196815 [debug]:    Started loading packages
+18:24:32.202459 [debug]:     Loaded [  0.01s] packages
+18:24:32.203277 [info ]: Finished loading project [  0.02s]
+18:24:32.203890 [info ]: Started parsing
+18:24:32.248420 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:24:32.249567 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:24:32.250098 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:24:32.250433 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:24:32.250715 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:24:32.253093 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:24:32.370775 [info ]: Finished parsing [  0.17s]
+18:24:32.371831 [info ]: Started scheduling
+18:24:32.371985 [info ]: Finished scheduling [  0.00s]
+18:24:32.374888 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "PUBLIC", table: "_STG_ALBUMS" }) and interval: None
+18:24:32.405916 [info ]: Started building task graph
+18:24:32.406148 [info ]: Finished building task graph [  0.00s]
+18:24:32.413000 [info ]: Started rendering (1 nodes)
+18:24:32.413214 [info ]: Started model PUBLIC.scratchmodel
+18:24:32.413225 [debug]: Started rendering model PUBLIC.scratchmodel
+18:24:32.414509 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+18:24:32.414619 [debug]: Finished rendering [  0.00s] model PUBLIC.scratchmodel [success]
+18:24:32.414756 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+18:24:32.414914 [info ]: Started analyzing (1 nodes)
+18:24:32.414979 [debug]: Started analyzing model PUBLIC.scratchmodel
+18:24:32.424829 [warn ]: [SyntaxInvalid (dbt0101)]: extraneous input 'boooooooo' expecting one of <EOF>, 'ALTER', 'ANALYZE', 'BEGIN', 'CALL', 'COMMENT', 'COMMIT' ...
+  --> models/intermediate/scratchmodel.sql:5:1 (target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:6:1)
+18:24:32.424983 [debug]: Finished analyzing [  0.01s] model PUBLIC.scratchmodel [success]
+18:24:32.425225 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:24:32.425433 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 1 in 0.01s]
+18:24:32.434079 [info ]: Compiled node 'scratchmodel' is:
+
+
+
+
+
+boooooooo
+
+
+
+
+SELECT order_id, order_date, revenue
+FROM WORKSHOP_DB.PUBLIC._stg_albums
+WHERE 1=1
+
+AND region IN ('SW', 'NW', 'NE', 'SE')
+
+
+18:24:32.470345 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [283ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-16T18:27:44.671998Z | 01a145f8-539d-72c3-b8fa-660b3af60441 ====================
+18:27:44.672168 [info ]: dbt 2.0.6
+18:27:44.673097 [info ]: Started loading project
+18:27:44.676902 [info ]: Loading ~/.dbt/profiles.yml
+18:27:44.683685 [info ]: Loading packages.yml
+18:27:44.684521 [debug]:    Started loading packages
+18:27:44.693762 [debug]:     Loaded [  0.01s] packages
+18:27:44.694601 [info ]: Finished loading project [  0.02s]
+18:27:44.695164 [info ]: Started parsing
+18:27:44.736922 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:27:44.738110 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:27:44.738896 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:27:44.739604 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:27:44.740074 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:27:44.743440 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:27:44.860229 [info ]: Finished parsing [  0.17s]
+18:27:44.861298 [info ]: Started scheduling
+18:27:44.861595 [info ]: Finished scheduling [  0.00s]
+18:27:44.864823 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "PUBLIC", table: "_STG_ALBUMS" }) and interval: None
+18:27:44.918670 [info ]: Started building task graph
+18:27:44.918983 [info ]: Finished building task graph [  0.00s]
+18:27:44.925178 [info ]: Started rendering (1 nodes)
+18:27:44.925454 [info ]: Started model PUBLIC.scratchmodel
+18:27:44.925478 [debug]: Started rendering model PUBLIC.scratchmodel
+18:27:44.926748 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+18:27:44.926848 [debug]: Finished rendering [  0.00s] model PUBLIC.scratchmodel [success]
+18:27:44.926991 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+18:27:44.927126 [info ]: Started analyzing (1 nodes)
+18:27:44.927194 [debug]: Started analyzing model PUBLIC.scratchmodel
+18:27:44.934346 [warn ]: [SyntaxInvalid (dbt0101)]: extraneous input 'boooooooo' expecting one of <EOF>, 'ALTER', 'ANALYZE', 'BEGIN', 'CALL', 'COMMENT', 'COMMIT' ...
+  --> models/intermediate/scratchmodel.sql:6:1 (target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:7:1)
+18:27:44.934448 [debug]: Finished analyzing [  0.01s] model PUBLIC.scratchmodel [success]
+18:27:44.934646 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+18:27:44.934779 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 1 in 0.01s]
+18:27:44.946132 [info ]: Compiled node 'scratchmodel' is:
+
+
+
+
+
+
+boooooooo
+
+
+
+
+SELECT order_id, order_date, revenue
+FROM WORKSHOP_DB.PUBLIC._stg_albums
+WHERE 1=1
+
+AND region = 
+
+
+18:27:44.953967 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:27:44.982127 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [310ms]
+Processed: 1 model
+Summary: 1 total | 1 success
+==================== 2026-10-16T18:35:16.863836Z | 01a145ff-39fd-7b51-8432-6e23fb4662e0 ====================
+18:35:16.864112 [info ]: dbt 2.0.6
+18:35:16.864840 [info ]: Started loading project
+18:35:16.870534 [info ]: Loading ~/.dbt/profiles.yml
+18:35:16.882042 [info ]: Loading packages.yml
+18:35:16.882877 [debug]:    Started loading packages
+18:35:16.889536 [debug]:     Loaded [  0.01s] packages
+18:35:16.890312 [info ]: Finished loading project [  0.03s]
+18:35:16.890763 [info ]: Started parsing
+18:35:16.931857 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:35:16.932904 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:35:16.933726 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:35:16.934189 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:35:16.934670 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:35:16.937490 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:35:17.057505 [info ]: Finished parsing [  0.17s]
+18:35:17.058363 [info ]: Started scheduling
+18:35:17.058563 [info ]: Finished scheduling [  0.00s]
+18:35:17.058790 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion 'fqn:dataspline_test' does not match any enabled nodes
+18:35:17.058814 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+18:35:17.096286 [info ]: Started building task graph
+18:35:17.096532 [info ]: Finished building task graph [  0.00s]
+18:35:17.118231 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:35:17.148044 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 2 warnings for target 'dev' [284ms]
+==================== 2026-10-16T18:35:52.345067Z | 01a145ff-c496-7de3-85b2-f47e52f2fa3c ====================
+18:35:52.345192 [info ]: dbt 2.0.6
+18:35:52.345459 [info ]: Started loading project
+18:35:52.347867 [info ]: Loading ~/.dbt/profiles.yml
+18:35:52.352505 [info ]: Loading packages.yml
+18:35:52.353042 [debug]:    Started loading packages
+18:35:52.358720 [debug]:     Loaded [  0.01s] packages
+18:35:52.359557 [info ]: Finished loading project [  0.01s]
+18:35:52.360123 [info ]: Started parsing
+18:35:52.405256 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:35:52.406565 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:35:52.407296 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:35:52.407675 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:35:52.407963 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:35:52.410494 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:35:52.535724 [info ]: Finished parsing [  0.18s]
+18:35:52.536516 [info ]: Started scheduling
+18:35:52.536703 [info ]: Finished scheduling [  0.00s]
+18:35:52.579684 [info ]: Started building task graph
+18:35:52.579903 [info ]: Finished building task graph [  0.00s]
+18:35:52.589463 [info ]: Started rendering (1 nodes)
+18:35:52.589669 [info ]: Started analysis PUBLIC.datespline_test
+18:35:52.589686 [debug]: Started rendering analysis PUBLIC.datespline_test
+18:35:52.594288 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+18:35:57.774271 [debug]: create_debug_span(...).entered() took 951.7µs
+18:35:58.735081 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 959.6527ms
+18:35:58.735130 [debug]: reader.schema() took 2.2µs
+18:35:58.742263 [debug]: batch-consume loop (for res in reader) took 7.0929ms
+18:35:58.744920 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 970.5887ms
+18:35:58.746122 [debug]: concat_batches + normalize_result_column_names took 1.1483ms
+18:35:58.746728 [debug]: record_current_span_status_from_attrs took 559.7µs
+18:35:58.746763 [debug]: Query executed on node analysis.mock_steaming_project.datespline_test:
+select datediff(
+        day,
+        cast('2026-01-01' as date),
+        cast('2028-01-01' as date)
+        )
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+18:35:58.746812 [debug]: drop(query_span_guard) (span exit/export) took 55.8µs
+18:35:58.757750 [debug]: Compiled SQL for node analysis.mock_steaming_project.datespline_test at target\compiled\mock_steaming_project\analyses\datespline_test.sql
+18:35:58.757988 [debug]: Finished rendering [  6.17s] analysis PUBLIC.datespline_test [success]
+18:35:58.758339 [info ]: Finished rendering [  6.17s] (1 nodes, 0 skipped, 0 errors)
+18:35:58.758678 [info ]:  Succeeded analysis PUBLIC.datespline_test (analysis) [1 of 1 in 6.17s]
+18:35:58.799289 [info ]: New version available 2.0.8 (run `dbt system update`)
+18:35:58.834216 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [6.5s]
+Processed: 1 analysis
+Summary: 1 total | 1 success
+==================== 2026-10-16T18:44:35.797088Z | 01a14607-c153-7a63-9ae3-1401c77914ba ====================
+18:44:35.797204 [info ]: dbt 2.0.6
+18:44:35.797472 [info ]: Started loading project
+18:44:35.799992 [info ]: Loading ~/.dbt/profiles.yml
+18:44:35.808630 [info ]: Loading packages.yml
+18:44:35.809262 [debug]:    Started loading packages
+18:44:35.816730 [debug]:     Loaded [  0.01s] packages
+18:44:35.817714 [info ]: Finished loading project [  0.02s]
+18:44:35.818482 [info ]: Started parsing
+18:44:35.867002 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+18:44:35.869006 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.00s]
+18:44:35.869832 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.00s]
+18:44:35.870322 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.00s]
+18:44:35.870736 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.00s]
+18:44:35.874059 [debug]: Finished parsing analyses/datespline_test.sql [  0.00s]
+18:44:36.011672 [info ]: Finished parsing [  0.19s]
+18:44:36.012547 [info ]: Started scheduling
+18:44:36.012683 [info ]: Finished scheduling [  0.00s]
+18:44:36.045418 [info ]: Started building task graph
+18:44:36.045640 [info ]: Finished building task graph [  0.00s]
+18:44:36.051078 [info ]: Started rendering (1 nodes)
+18:44:36.051186 [info ]: Started analysis PUBLIC.datespline_test
+18:44:36.051199 [debug]: Started rendering analysis PUBLIC.datespline_test
+18:44:36.056187 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+18:44:37.923146 [debug]: create_debug_span(...).entered() took 77.6µs
+18:44:38.569160 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 645.7739ms
+18:44:38.569193 [debug]: reader.schema() took 1.1µs
+18:44:38.571121 [debug]: batch-consume loop (for res in reader) took 1.8973ms
+18:44:38.573404 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 650.1887ms
+18:44:38.573536 [debug]: concat_batches + normalize_result_column_names took 78.5µs
+18:44:38.573586 [debug]: record_current_span_status_from_attrs took 32.3µs
+18:44:38.573618 [debug]: Query executed on node analysis.mock_steaming_project.datespline_test:
+select datediff(
+        day,
+        cast('2026-01-01' as date),
+        cast('2028-01-01' as date)
+        )
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+18:44:38.573671 [debug]: drop(query_span_guard) (span exit/export) took 60.2µs
+18:44:38.577598 [debug]: Compiled SQL for node analysis.mock_steaming_project.datespline_test at target\compiled\mock_steaming_project\analyses\datespline_test.sql
+18:44:38.577878 [debug]: Finished rendering [  2.53s] analysis PUBLIC.datespline_test [success]
+18:44:38.578333 [info ]: Finished rendering [  2.53s] (1 nodes, 0 skipped, 0 errors)
+18:44:38.579033 [info ]:  Succeeded analysis PUBLIC.datespline_test (analysis) [1 of 1 in 2.53s]
+18:44:38.632193 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' successfully for target 'dev' [2.8s]
+Processed: 1 analysis
+Summary: 1 total | 1 success
+==================== 2026-10-21T15:17:39.477719Z | 01a15f0a-1801-7192-99ea-f1f0a81a5175 ====================
+15:17:39.480292 [info ]: dbt 2.0.6
+15:17:39.481006 [info ]: Started loading project
+15:17:39.503627 [info ]: Loading ~/.dbt/profiles.yml
+15:17:39.609302 [info ]: Loading packages.yml
+15:17:39.653967 [debug]:    Started loading packages
+15:17:39.673937 [debug]:     Loaded [  0.02s] packages
+15:17:39.676376 [info ]: Finished loading project [  0.20s]
+15:17:39.696953 [info ]: Started parsing
+15:17:39.860904 [debug]: Finished parsing models/staging/sources.yml [  0.03s]
+15:17:39.928351 [debug]: Finished parsing models/intermediate/_int_albumsize.sql [  0.04s]
+15:17:39.949753 [debug]: Finished parsing models/intermediate/scratchmodel.sql [  0.02s]
+15:17:39.966341 [debug]: Finished parsing models/staging/_stg_albums.sql [  0.02s]
+15:17:39.984423 [debug]: Finished parsing models/staging/_stg_tracks.sql [  0.02s]
+15:17:40.018751 [debug]: Finished parsing analyses/datespline_test.sql [  0.02s]
+15:17:40.344995 [info ]: Finished parsing [  0.65s]
+15:17:40.350374 [info ]: Started scheduling
+15:17:40.350637 [info ]: Finished scheduling [  0.00s]
+15:17:40.360921 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "ALBUMS" }) and interval: None
+15:17:40.361541 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "WORKSHOP_DB", schema: "RAW_DATA", table: "TRACKS" }) and interval: None
+15:17:40.436170 [info ]: Started building task graph
+15:17:40.436727 [info ]: Finished building task graph [  0.00s]
+15:17:40.459145 [info ]: Started rendering (5 nodes)
+15:17:40.459487 [info ]: Started model PUBLIC.scratchmodel
+15:17:40.459508 [debug]: Started rendering model PUBLIC.scratchmodel
+15:17:40.460211 [info ]: Started model PUBLIC._int_albumsize
+15:17:40.460233 [debug]: Started rendering model PUBLIC._int_albumsize
+15:17:40.460257 [info ]: Started model PUBLIC._stg_tracks
+15:17:40.460270 [debug]: Started rendering model PUBLIC._stg_tracks
+15:17:40.460292 [info ]: Started model PUBLIC._stg_albums
+15:17:40.460307 [debug]: Started rendering model PUBLIC._stg_albums
+15:17:40.460344 [info ]: Started analysis PUBLIC.datespline_test
+15:17:40.460359 [debug]: Started rendering analysis PUBLIC.datespline_test
+15:17:40.475097 [debug]: Compiled SQL for node model.mock_steaming_project.scratchmodel at target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql
+15:17:40.475715 [debug]: Compiled SQL for node model.mock_steaming_project._stg_tracks at target\compiled\mock_steaming_project\models\staging\_stg_tracks.sql
+15:17:40.475823 [debug]: Compiled SQL for node model.mock_steaming_project._stg_albums at target\compiled\mock_steaming_project\models\staging\_stg_albums.sql
+15:17:40.478074 [debug]: Compiled SQL for node model.mock_steaming_project._int_albumsize at target\compiled\mock_steaming_project\models\intermediate\_int_albumsize.sql
+15:17:40.475669 [debug]: Finished rendering [  0.02s] model PUBLIC.scratchmodel [success]
+15:17:40.490261 [info ]: Started analyzing (4 nodes)
+15:17:40.490648 [debug]: Started analyzing model PUBLIC.scratchmodel
+15:17:40.490706 [debug]: Finished rendering [  0.03s] model PUBLIC._stg_tracks [success]
+15:17:40.491299 [debug]: Started analyzing model PUBLIC._stg_tracks
+15:17:40.491344 [debug]: Finished rendering [  0.03s] model PUBLIC._stg_albums [success]
+15:17:40.491826 [debug]: Started analyzing model PUBLIC._stg_albums
+15:17:40.491864 [debug]: Finished rendering [  0.03s] model PUBLIC._int_albumsize [success]
+15:17:40.492233 [debug]: Started analyzing model PUBLIC._int_albumsize
+15:17:40.507488 [debug]: Snowflake driver resolved: snowflake 0.21.0.dev+dbt0.21.18
+15:17:40.507428 [debug]: Finished analyzing [  0.02s] model PUBLIC._stg_albums [success]
+15:17:40.507927 [info ]:  Succeeded model PUBLIC._stg_albums (view) [4 of 5 in 0.05s]
+15:17:40.507979 [debug]: Finished analyzing [  0.02s] model PUBLIC._stg_tracks [success]
+15:17:40.508914 [info ]:  Succeeded model PUBLIC._stg_tracks (view) [3 of 5 in 0.05s]
+15:17:40.512743 [warn ]: [SyntaxInvalid (dbt0101)]: extraneous input 'boooooooo' expecting one of <EOF>, 'ALTER', 'ANALYZE', 'BEGIN', 'CALL', 'COMMENT', 'COMMIT' ...
+  --> models/intermediate/scratchmodel.sql:6:1 (target\compiled\mock_steaming_project\models\intermediate\scratchmodel.sql:7:1)
+15:17:40.513054 [debug]: Finished analyzing [  0.02s] model PUBLIC.scratchmodel [success]
+15:17:40.513383 [info ]:  Succeeded model PUBLIC.scratchmodel (view) [1 of 5 in 0.04s]
+15:17:40.520557 [debug]: Finished analyzing [  0.03s] model PUBLIC._int_albumsize [success]
+15:17:40.521028 [info ]: Finished analyzing [  0.03s] (4 nodes, 0 skipped, 0 errors)
+15:17:40.521492 [info ]:  Succeeded model PUBLIC._int_albumsize (view) [2 of 5 in 0.06s]
+15:17:43.872890 [debug]: create_debug_span(...).entered() took 1.9932ms
+15:17:44.781075 [debug]: stmt.execute() (submit+wait_for_completion, returns reader) took 906.5639ms
+15:17:44.781444 [debug]: reader.schema() took 280.3µs
+15:17:44.797662 [debug]: batch-consume loop (for res in reader) took 16.1494ms
+15:17:44.800712 [debug]: do_execute(conn) (closure: stmt.execute + schema + batch loop) took 927.7488ms
+15:17:44.801645 [debug]: concat_batches + normalize_result_column_names took 890.3µs
+15:17:44.802573 [debug]: record_current_span_status_from_attrs took 856.1µs
+15:17:44.802610 [debug]: Query executed on node analysis.mock_steaming_project.datespline_test:
+select datediff(
+        day,
+        cast('2026-01-01' as date),
+        cast('2028-01-01' as date)
+        )
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "workshop", "target_name": "dev"} */
+15:17:44.802659 [debug]: drop(query_span_guard) (span exit/export) took 54.5µs
+15:17:44.819491 [debug]: Compiled SQL for node analysis.mock_steaming_project.datespline_test at target\compiled\mock_steaming_project\analyses\datespline_test.sql
+15:17:44.819793 [debug]: Finished rendering [  4.36s] analysis PUBLIC.datespline_test [success]
+15:17:44.820662 [info ]: Finished rendering [  4.36s] (5 nodes, 0 skipped, 0 errors)
+15:17:44.821534 [info ]:  Succeeded analysis PUBLIC.datespline_test (analysis) [5 of 5 in 4.36s]
+15:17:44.864897 [info ]: New version available 2.0.9 (run `dbt system update`)
+15:17:44.916766 [info ]: 
+==================== Execution Summary =====================
+Finished 'compile' with 1 warning for target 'dev' [5.4s]
+Processed: 4 models | 1 analysis
+Summary: 5 total | 5 success
+==================== 2026-10-21T15:17:50.431093Z | 01a15f0a-42da-7992-8ab7-73ac3f744601 ====================
+15:17:50.733693 [debug]: DuckDB driver resolved: duckdb_extended 0.21.0.dev+dbt0.0.31
+15:17:57.029443 [info ]: started
+==================== 2026-10-28T18:24:25.821303Z | 01a183c1-9ad8-7d93-9b93-e3ff8f830e01 ====================
+==================== 2026-10-28T18:24:31.964097Z | 01a183c1-b2ab-78e2-bc4a-8a879d4ddea7 ====================
+18:24:32.169760 [info ]: 
+==================== Execution Summary =====================
+Finished 'internal' successfully [205ms]
+18:24:32.401639 [info ]: 
+==================== Execution Summary =====================
+Finished 'internal' successfully [6.6s]

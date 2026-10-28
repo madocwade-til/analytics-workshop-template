@@ -1,0 +1,20 @@
+{
+  "target_dir": "C:\\Users\\MadocWade\\Documents\\Github\\dbt_workspace\\workshop_work\\analytics-workshop-template\\target",
+  "fingerprints": {
+    "semantic_manifest.json": {
+      "size": 234,
+      "modified_secs": 1792004974
+    },
+    "run_results.json": {
+      "size": 2905,
+      "modified_secs": 1792004981
+    },
+    "manifest.json": {
+      "size": 592240,
+      "modified_secs": 1792004981
+    }
+  },
+  "write_source": "DirectWrite",
+  "context_dir": null,
+  "context_fingerprints": {}
+}
